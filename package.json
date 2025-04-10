@@ -1,0 +1,26 @@
+{
+  "name": "atlas-the-joy-of-painting-api",
+  "version": "1.0.0",
+  "description": "atlas-sql-joy_of_learning_api",
+  "homepage": "https://github.com/AllenKeelig/atlas-the-joy-of-painting-api#readme",
+  "bugs": {
+    "url": "https://github.com/AllenKeelig/atlas-the-joy-of-painting-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://@github.com/AllenKeelig/atlas-the-joy-of-painting-api.git"
+  },
+  "license": "ISC",
+  "author": "Allen_Keeling",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "testing"
+  },
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "fs": "^0.0.1-security",
+    "mysql2": "^3.14.0",
+    "string-similarity": "^4.0.4"
+  }
+}
