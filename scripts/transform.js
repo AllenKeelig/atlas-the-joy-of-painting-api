@@ -30,7 +30,6 @@ function transformData(colors, subjects, dates) {
             season: colorData.season,
             episode_number: colorData.episode_number,
             colors: colorData.colors,
-            color_hex: colorData.color_hex,
             air_date: dateData ? dateData.air_date : null,
             subjects: subjectData ? subjectData.subjects : []
         });

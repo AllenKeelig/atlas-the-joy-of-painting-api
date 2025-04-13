@@ -24,14 +24,11 @@ async function loadData() {
                 [ep.episode, ep.season, ep.episode_number, ep.air_date]
             );
 
-            console.log('colors:', ep.colors, 'type:', typeof ep.colors);
-            console.log('hexes:', ep.color_hex, 'type:', typeof ep.color_hex);
-
             for (let i = 0; i < ep.colors.length; i++) {
-                if (ep.colors[i] && ep.color_hex[i]) {
+                if (ep.colors[i]) {
                     await connection.execute(
-                        'INSERT IGNORE INTO color (painting_index, color_name, color_hex) VALUES (?, ?, ?)',
-                        [`${ep.season}-${ep.episode_number}`, ep.colors[i].trim(), ep.color_hex[i].trim()]
+                        'INSERT IGNORE INTO color (painting_index, color_name) VALUES (?, ?)',
+                        [`${ep.season}-${ep.episode_number}`, ep.colors[i].trim()]
                     );
                 }
             }

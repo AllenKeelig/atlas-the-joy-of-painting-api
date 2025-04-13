@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS episode_subject, episode_color, subject, color, episode;
 -- Main Episode table
 CREATE TABLE episode (
     id SERIAL PRIMARY KEY,
-    title TEXT NOT NULL,
+    title VARCHAR(255) NOT NULL,
     season INTEGER NOT NULL,
     episode_number INTEGER NOT NULL,
     air_date DATE NOT NULL

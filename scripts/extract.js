@@ -6,24 +6,31 @@ async function extractColors() {
     const filePath = './data/colors.csv';
 
     const fileContent = await fs.readFile(filePath, 'utf-8');
-    const lines = fileContent.split('\n');
+    const lines = fileContent.split('\n').filter(Boolean);
+    const header = lines[0].split(',');
 
     lines.slice(1).forEach(line => {
         const values = line.split(',');
+
+        // Extract present colors from the 1/0 flags
+        const presentColors = [];
+        for (let i = 10; i < values.length; i++) {
+            if (values[i] === '1') {
+                presentColors.push(header[i]);
+            }
+        }
 
         colors.push({
             painting_index: values[0],
             painting_title: values[3],
             season: values[4],
             episode_number: values[5],
-            colors: values[8],
-            color_hex: values[9]
+            colors: presentColors
         });
     });
 
     return colors;
 }
-
 
 // Extract subjects from the CSV file
 async function extractSubjects() {
